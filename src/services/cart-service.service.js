@@ -2,31 +2,31 @@
 
 
 export class CartService {
-  recipesInCar=[];
-  constructor() { }
+  static recipesInCart=[];
 
-  addToCart(recipe){
+
+  static addToCart(recipe){
     let recipeID=recipe.recipe_id;
-    if(!this.isContained(recipeID)){
-      this.recipesInCart.push(recipe);
+    if(!CartService.isContained(recipeID)){
+      CartService.recipesInCart.push(recipe);
     }
     
   }
 
-  removeFromCart(recipeID){
+  static removeFromCart(recipeID){
    let index=-1;
-   for(let i=0;i<this.recipesInCart.length;i++){
-     if(this.recipesInCart[i].recipe_id===recipeID){
+   for(let i=0;i<CartService.recipesInCart.length;i++){
+     if(CartService.recipesInCart[i].recipe_id===recipeID){
        index=i;
        break;
      }
    }
-   this.recipesInCart.splice(index,1);
+   CartService.recipesInCart.splice(index,1);
   }
 
 
-   isContained(recipeID){
-    let recipeItem= this.recipesInCart.find((recipe)=>{
+  static isContained(recipeID){
+    let recipeItem= CartService.recipesInCart.find((recipe)=>{
         return recipe.recipe_id===recipeID
     });
     if(!recipeItem){
@@ -37,8 +37,8 @@ export class CartService {
     }
   }
 
-  getRecipesInCart(){
-    return this.recipesInCart;
+  static getRecipesInCart(){
+    return CartService.recipesInCart;
   }
 
 }

@@ -7,7 +7,6 @@ import { CartService } from "../../services/cart-service.service";
 import { withRouter } from 'react-router-dom'
 
 class RecipeDetail extends Component {
-    cartService=new CartService();
     componentDidMount() {
 
         
@@ -32,8 +31,8 @@ class RecipeDetail extends Component {
     };
 
     addToCart(){
-        if(!!this.selectedRecipe){
-          this.cartService.addToCart(this.selectedRecipe);
+        if(!!this.props.selectedRecipe){
+          CartService.addToCart(this.props.selectedRecipe);
         }
       }
     

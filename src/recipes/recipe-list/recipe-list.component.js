@@ -36,7 +36,6 @@ class RecipeList extends Component {
     }
 
     listItemClicked(recipe) {
-        console.log(recipe);
         this.props.history.push(`/recipes/${recipe.recipe_id}`)
     }
 }

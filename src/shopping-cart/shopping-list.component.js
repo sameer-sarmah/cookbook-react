@@ -1,17 +1,17 @@
-import { CartService } from '../services/cart-service.service';
 import './shopping-list.component.css';
-import { addToCart, removeFromCart } from "../actions/action-creators";
+import { addToCart, removeFromCart, getRecipesInCart } from "../actions/action-creators";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
 import React, { Component } from "react";
 
-export class ShoppingListComponent extends Component{
+export class ShoppingListComponent extends Component {
 
 
 
   componentDidMount() {
-
+    this.props.getRecipesInCart();
+    //console.log(this.props);
   }
   render() {
     if (!this.props.recipes || this.props.recipes.length == 0) {
@@ -22,11 +22,11 @@ export class ShoppingListComponent extends Component{
       );
     }
     else {
-      <div className="flex-item flex-row-container width100pc height100pc align-center" >
+     return ( <div className="flex-item flex-row-container width100pc height100pc align-center" >
         <div >
           {this.props.recipes.map(this.createRow.bind(this))}
         </div>
-      </div>
+      </div>);
     }
   }
 
@@ -52,7 +52,7 @@ export class ShoppingListComponent extends Component{
   }
 
   removeFromCart(recipe) {
-      this.props.removeFromCart(recipe.recipe_id);
+    this.props.removeFromCart(recipe.recipe_id);
   }
 }
 
@@ -64,8 +64,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ removeFromCart: removeFromCart },
+  return bindActionCreators({ removeFromCart: removeFromCart, getRecipesInCart: getRecipesInCart },
     dispatch);
 }
 
-export default withRouter( connect(mapStateToProps, mapDispatchToProps)(ShoppingListComponent));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ShoppingListComponent));

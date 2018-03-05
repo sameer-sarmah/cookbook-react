@@ -1,13 +1,13 @@
-import { FETCH_RECIPES,FETCH_COUNT,FETCH_RECIPE,ADD_TO_CART,DELETE_FROM_CART,GET_RECIPES_IN_CART,SELECT_RECIPE } from './types';
-import {RecipeService} from  '../services/recipe.service';
-import {CartService} from  '../services/cart-service.service';
+import { FETCH_RECIPES, FETCH_COUNT, FETCH_RECIPE, ADD_TO_CART, DELETE_FROM_CART, GET_RECIPES_IN_CART, SELECT_RECIPE } from './types';
+import { RecipeService } from '../services/recipe.service';
+import { CartService } from '../services/cart-service.service';
 
 let recipeCount;
-let growingThreshold=5;
-let recipeSvc=new RecipeService();
-let cartSvc=new CartService();
+let growingThreshold = 5;
+let recipeSvc = new RecipeService();
+
 export function fetchRecipes(options) {
-    let recipes=recipeSvc.getRecipes();
+    let recipes = recipeSvc.getRecipes();
     return (dispatch) => {
         dispatch({
             type: FETCH_RECIPES,
@@ -27,7 +27,7 @@ export function selectRecipe(selectedRecipe) {
 
 
 export function fetchRecipe(id) {
-    let recipe=recipeSvc.getRecipe(id);
+    let recipe = recipeSvc.getRecipe(id);
     return (dispatch) => {
         dispatch({
             type: FETCH_RECIPE,
@@ -36,28 +36,35 @@ export function fetchRecipe(id) {
     };
 }
 
-export function addToCart(recipe){
-   cartSvc.addToCart(recipe);
-   let recipes=cartSvc.getRecipesInCart();
-   dispatch({
-    type: ADD_TO_CART,
-    payload: recipes
-});
+export function addToCart(recipe) {
+    CartService.addToCart(recipe);
+    let recipes = CartService.getRecipesInCart();
+    return (dispatch) => {
+        dispatch({
+            type: ADD_TO_CART,
+            payload: recipes
+        })
+    };
 }
 
-export function removeFromCart(recipeID){
-    cartSvc.removeFromCart(recipeID);
-    let recipes=cartSvc.getRecipesInCart();
-    dispatch({
-     type: DELETE_FROM_CART,
-     payload: recipes
- });
+export function removeFromCart(recipeID) {
+    CartService.removeFromCart(recipeID);
+    let recipes = CartService.getRecipesInCart();
+    return (dispatch) => {
+        dispatch({
+            type: DELETE_FROM_CART,
+            payload: recipes
+        })
+    };
+
 }
 
-export function getRecipesInCart(){
-    let recipes=cartSvc.getRecipesInCart();
-    dispatch({
-     type: GET_RECIPES_IN_CART,
-     payload: recipes
- });
+export function getRecipesInCart() {
+    let recipes = CartService.getRecipesInCart();
+    return (dispatch) => {
+        dispatch({
+            type: GET_RECIPES_IN_CART,
+            payload: recipes
+        })
+    };
 }
