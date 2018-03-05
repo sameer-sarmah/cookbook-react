@@ -6,6 +6,8 @@ import { withRouter } from 'react-router-dom'
 import './recipe-list.component.css';
 
 class RecipeList extends Component {
+
+
     componentDidMount() {
         this.props.fetchRecipes();
     }
@@ -35,7 +37,7 @@ class RecipeList extends Component {
 
     listItemClicked(recipe) {
         console.log(recipe);
-        //this.router.navigate(['recipes',recipe.recipe_id])
+        this.props.history.push(`/recipes/${recipe.recipe_id}`)
     }
 }
 
@@ -51,4 +53,4 @@ function mapDispatchToProps(dispatch) {
         dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeList);
+export default withRouter( connect(mapStateToProps, mapDispatchToProps)(RecipeList));

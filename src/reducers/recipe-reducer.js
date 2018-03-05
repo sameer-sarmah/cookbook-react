@@ -5,7 +5,7 @@ export default function(state = {recipes:[],selectedRecipe:{}}, action) {
   switch (action.type) {
     case FETCH_RECIPES:{
       const recipes =action.payload
-      return {recipes:state.recipes.concat(recipes),selectedRecipe:state.selectedRecipe};
+      return {recipes:recipes,selectedRecipe:state.selectedRecipe};
     }
 
     case FETCH_RECIPE:{

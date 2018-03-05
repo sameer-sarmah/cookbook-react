@@ -3,8 +3,13 @@ import './shopping-list.component.css';
 import { addToCart, removeFromCart } from "../actions/action-creators";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom'
+import React, { Component } from "react";
 
-export class ShoppingListComponent {
+export class ShoppingListComponent extends Component{
+
+
+
   componentDidMount() {
 
   }
@@ -63,4 +68,4 @@ function mapDispatchToProps(dispatch) {
     dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShoppingListComponent);
+export default withRouter( connect(mapStateToProps, mapDispatchToProps)(ShoppingListComponent));

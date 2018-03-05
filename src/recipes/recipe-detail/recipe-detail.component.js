@@ -4,6 +4,7 @@ import { fetchRecipe, fetchRecipes, selectRecipe } from "../../actions/action-cr
 import { bindActionCreators } from "redux";
 import './recipe-detail.component.css';
 import { CartService } from "../../services/cart-service.service";
+import { withRouter } from 'react-router-dom'
 
 class RecipeDetail extends Component {
     cartService=new CartService();
@@ -14,7 +15,7 @@ class RecipeDetail extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         let recipeID;
-        if(!!this.props.match && !!this.props.match.params){
+        if(!!this.props.match && !!this.props.match.params.id){
             recipeID=this.props.match.params.id;
         }
         else if(!!this.props.recipes && this.props.recipes.length>0){
@@ -89,4 +90,4 @@ function mapDispatchToProps(dispatch) {
         dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetail);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RecipeDetail));
