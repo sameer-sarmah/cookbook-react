@@ -1,0 +1,37 @@
+.flex-row-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start; 
+    align-items: center;
+	align-content: center;
+}
+
+.flex-column-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start; 
+    align-items: center;
+	align-content: center;
+}
+
+.flex-item {
+    flex-grow: 1;
+    flex-shrink: 1; 
+    align-self: center;
+    
+}
+
+.image-container img {
+    height:150px;
+}
+
+.svg-icon img{
+height:40px;
+cursor: pointer;
+}
+.text-container{
+	width: 80%;
+}
+.list-item{
+	height: 20%
+}
