@@ -33,7 +33,7 @@ export class ShoppingListComponent extends Component {
 
   createRow(addedRecipe) {
     const item = (
-      <div className="flex-row-container list-item align-center">
+      <div className="flex-row-container list-item align-center" key={addedRecipe.recipe_id}>
         <div className="image-container flex-item">
           <img src={addedRecipe.image_url} />
         </div>
@@ -53,6 +53,7 @@ export class ShoppingListComponent extends Component {
 
   removeFromCart(recipe) {
     this.props.removeFromCart(recipe.recipe_id);
+    this.props.getRecipesInCart();
   }
 }
 

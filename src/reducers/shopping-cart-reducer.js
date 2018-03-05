@@ -8,11 +8,15 @@ export default function(cart = {recipes:[]}, action) {
       return {recipes:recipes};
     }
     case DELETE_FROM_CART:{
-        const recipes =action.payload
+        let recipes =action.payload;
+        if(!recipes){
+          recipes=[];
+        }
         return {recipes:recipes};
     }
     case GET_RECIPES_IN_CART:{
-        const recipes =action.payload
+        const identity=(recipe)=>{return recipe};
+        const recipes=action.payload.map(identity);
         return {recipes:recipes};
     }
      default:
