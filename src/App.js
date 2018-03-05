@@ -3,11 +3,13 @@ import './App.css';
 import { BrowserRouter, Route, IndexRoute, hashHistory } from 'react-router-dom';
 import RecipeComponent from './recipes/recipes.component';
 import ShoppingCartComponent from './shopping-cart/shopping-list.component';
+import { HeaderComponent } from './header/header.component';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <HeaderComponent/>
         <BrowserRouter>
           <div className="App">
           <Route exact path="/" component={RecipeComponent} />
