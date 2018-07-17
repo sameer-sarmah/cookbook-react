@@ -13,7 +13,7 @@ import { connect } from "react-redux";
   render() {
     const header = (
       <div id="header" className="header flex-item width100pc" >
-        <nav role="navigation">
+        <nav role="navigation" className="width100pc">
           <ul>
             <li className="flex-start" onClick={this.navigateTo.bind(this,'/recipes')}>
               <a >

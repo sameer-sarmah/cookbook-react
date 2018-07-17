@@ -44,7 +44,7 @@ class RecipeDetail extends Component {
             <div className="height100pc width100pc">
                 <div className="flex-column-container height100pc">
                     <div className="flex-row-container flex-item textAlignCenter height55pc" >
-                        <div className="flex-item ">
+                        <div className="flex-item height100pc">
                             <img src={this.props.selectedRecipe.image_url} className="height100pc" />
                         </div>
                         <div className="flex-item text-block">
@@ -57,15 +57,15 @@ class RecipeDetail extends Component {
                     </div>
 
                     <div className="flex-row-container flex-item darkGreyBG height45pc">
-                        <div className="flex-item text-block whiteTextColor width40pc marginLeft5pc">
-                            <h2>Ingredients:</h2>
-                            <ul>
+                        <div className="flex-item text-block whiteTextColor width40pc marginLeft5pc height100pc">
+                            <h2 className="height20pc no-margin">Ingredients:</h2>
+                            <ul className="height80pc no-margin overflow-hidden">
                                 {this.props.selectedRecipe.ingredients.map(this.createRow)}
                             </ul>
                         </div>
-                        <div className="flex-item text-block whiteTextColor width60pc">
-                            <h2>Directions:</h2>
-                            <ul>
+                        <div className="flex-item text-block whiteTextColor width60pc height100pc">
+                            <h2 className="height20pc no-margin">Directions:</h2>
+                            <ul className="height80pc no-margin  overflow-hidden">
                                 {this.props.selectedRecipe.directions.map(this.createRow)}
                             </ul>
                         </div>

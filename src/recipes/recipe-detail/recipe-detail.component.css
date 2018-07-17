@@ -86,3 +86,20 @@ margin-left:5%;
 .height45pc{
     height: 45%;
 }
+
+.height80pc{
+    height: 80%;
+}
+
+.height20pc{
+    height: 20%;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.no-margin{
+    margin: 0;
+}
+
