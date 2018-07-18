@@ -8,6 +8,10 @@ import  RecipeDetail  from './recipe-detail/recipe-detail.component';
 
 class RecipeComponent extends Component {
 
+   componentDidMount(){
+       console.log("RecipeComponent initialized");
+   }
+
     render() {
         const panel = (
             <div className="flex-item flex-row-container height100pc width100pc" >
