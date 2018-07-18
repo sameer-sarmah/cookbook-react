@@ -6,8 +6,7 @@ const ExtractCSS= require('extract-text-webpack-plugin');
 module.exports = {
     devtool: 'source-map',
     entry: {
-      main: "./src/index.js",
-      vendor:"axios"
+      main: "./src/index.js"
     },
     output: {
       path: path.join(__dirname, 'dist'),
@@ -47,13 +46,13 @@ module.exports = {
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src', 'index.html'),
         inject: 'body',
-        chunks: ['common','vendor','main'],
+        chunks: ['common','main'],
         filename: 'index.html'
       }),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
-        names: ["common","vendor"]
+        names: ["common"]
       }),
       new ExtractCSS({
         filename: "[name].css"
@@ -63,9 +62,9 @@ module.exports = {
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       compress: true,
-      port: 9000,
+      port: 8087,
       hot: true,
-      historyApiFallback: true,
+      historyApiFallback: true
     }
   };
   

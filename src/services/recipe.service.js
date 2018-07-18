@@ -15,11 +15,7 @@ export class RecipeService {
       '1/2 tablespoon mayo (optional)',
       '1 tablespoon carrot, grated',
       '1 tablespoon celery, sliced',
-      '1 tablespoon green or red onion, sliced or diced',
-      '1 tablespoon blue cheese, room temperature, crumbled',
-      '1/2 cup cheddar cheese, room temperature, grated',
-      '2 slices bread',
-      '1 tablespoon butter, room temperature'
+      '1 tablespoon green or red onion, sliced or diced'
     ],
     'directions': [
       'Mix the chicken, hot sauce, mayo, carrot, celery and onion in a small bowl.',
@@ -61,18 +57,13 @@ export class RecipeService {
       '1 cup cooked chicken, shredded or diced and warm',
       '1/4 cup hot sauce (such as Frank\'s Red Hot)',
       '1 tablespoon butter, melted',
-      '1/4 cup cheddar cheese',
-      '1/4 cup blue cheese, crumbled',
-      '12 slices bacon, cut in half',
-      '1/4 cup blue cheese dressing or ranch dressing (optional)'
+      '1/4 cup cheddar cheese'
     ],
     'directions': [
       'Place the jalapenos in a single layer on a baking pan with the cut side down and roast in a preheated 350F/180C oven for 10 minutes.',
       'Mix the hot sauce and the melted butter and then mix in the chicken.',
-      'Fill the jalapenos with the buffalo chicken, top with cheese and wrap with bacon securing everything with a toothy pick.',
-      'Bake in a preheated 350F/180C oven until the bacon is cooked, about 20-25 minutes.',
-      'Serve while still warm with a side celery and carrot sticks and some blue cheese sauce for dipping.'
-    ]
+      'Fill the jalapenos with the buffalo chicken, top with cheese and wrap with bacon securing everything with a toothy pick.'
+      ]
   }, {
     'publisher': 'Closet Cooking',
     'f2f_url': 'http://food2fork.com/view/35592',
@@ -87,10 +78,7 @@ export class RecipeService {
       '2 slices bread',
       '1/2 cup cheddar cheese, shredded and room temperature',
       '1/4 cup chicken satay or plain chicken, shredded and warm',
-      '2 tablespoons spicy peanut sauce',
-      '1/2 avocado, sliced',
-      '1 tablespoon cilantro, torn',
-      'sriracha hot sauce to taste'
+      '2 tablespoons spicy peanut sauce'
     ],
     'directions': [
       'Warm a pan over medium heat.',
